@@ -1,0 +1,30 @@
+﻿@model Game
+
+<style>
+    iframe {
+        display: block;
+        margin: 20px auto; /* по горизонтали по центру, сверху/снизу 20px */
+        border: none;
+    }
+    h1 {
+        text-align: center;
+        color: white;
+    }
+    body {
+        background: #1e1e1e;
+        margin: 0; padding: 0;
+        font-family: sans-serif;
+    }
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ID Игры</title>
+</head>
+<body>
+<h1>Выбранный ID игры: @Model.id</h1>
+<iframe src="/games/@Model.id/index.html" width="800" height="600"></iframe>
+</body>
+</html>
