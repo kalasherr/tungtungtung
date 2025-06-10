@@ -1,13 +1,29 @@
 ﻿@model Game
 
+
 <style>
+    {
+        text-align: center;
+        color: white;
+    }
     iframe {
         display: block;
-        margin: 20px auto; /* по горизонтали по центру, сверху/снизу 20px */
+        margin: 20px auto;
         border: none;
+    }
+    img {
+        display: block;
+        margin: 20px auto;
+        border: none;
+        height: 200px;
+        width: 800px;
     }
     h1 {
         text-align: center;
+        color: white;
+    }
+    h6 {
+        text-align: left;
         color: white;
     }
     body {
@@ -24,7 +40,47 @@
     <title>ID Игры</title>
 </head>
 <body>
-<h1>Выбранный ID игры: @Model.id</h1>
-<iframe src="/games/@Model.id/index.html" width="800" height="600"></iframe>
-</body>
+<img style = "align-content: center;" src=@Url.Content($"~/games/{Model.id}/Images/logo.png") alt="Game @Model.id" />
+<iframe src="/games/@Model.id/index.html" width="@Model.window_width" height="@Model.window_height"></iframe>
+    @if (Model.description != "")
+    {
+        <div style="text-align: left; color: white;"><h4>@Model.description</h4></div>
+    }
+    <div style="height: 50px;"></div>
+    @if (Model.tags_list.Count != 0)
+    {
+        <div style="text-align: left; color: white;">
+            <h4>Tags:</h4>
+            @foreach (var tag in Model.tags_list)
+            {
+                <a class="game-link" asp-controller="Home" asp-action="TopList" asp-route-tag="@tag" style="margin-right: 0px; color: #ffffff; text-decoration: none;">
+                    @tag
+                </a>
+            }
+        </div>
+    }
+    <div style="height: 50px;"></div>
+    <h6>Comments: </h6>
+    <div style="height: 20px;"></div>
+    @if (Model.comments.Count != 0)
+    {
+        @foreach (var comment in Model.comments)
+        {
+            <a class="game-link" asp-controller="Profile" asp-action="Index" asp-route-id="@comment.author" style="margin-right: 0px; color: #ffffff; text-decoration: none;">
+                <h6>@comment.author : </h6>
+            </a>
+            <h6><div style = "margin-left: 20px; margin-top: 10px;">@comment.text</div></h6>
+        }
+    }
+    else
+    {
+        <h6>There is no comments there :(</h6>
+    }
+    <div style="height: 100px;"></div>
+    
+    
+    
+    
+    
+    </body>
 </html>

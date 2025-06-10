@@ -36,8 +36,8 @@ namespace FirstWebApp.Controllers
         }
         public IActionResult Index(int id)
         {
-            var game = _context.Games.FirstOrDefault(g => g.id == id);
-
+            // var game = _context.Games.FirstOrDefault(g => g.id == id);
+            Game game = new Game(id);
             if (game == null)
             {
                 return NotFound();

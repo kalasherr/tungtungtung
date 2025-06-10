@@ -25,6 +25,10 @@ namespace FirstWebApp.Controllers
             return View();
         }
 
+        public IActionResult TopList(string tag)
+        {
+            return View();
+        }
 
         public IActionResult Contacts()
         {
