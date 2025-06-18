@@ -1,0 +1,13 @@
+C:\Users\User\RiderProjects\tungtungtung\FirstWebApp\DataAccessPostgres\bin\Debug\net8.0\DataAccessPostgres.deps.json
+C:\Users\User\RiderProjects\tungtungtung\FirstWebApp\DataAccessPostgres\bin\Debug\net8.0\DataAccessPostgres.dll
+C:\Users\User\RiderProjects\tungtungtung\FirstWebApp\DataAccessPostgres\bin\Debug\net8.0\DataAccessPostgres.pdb
+C:\Users\User\RiderProjects\tungtungtung\FirstWebApp\DataAccessPostgres\obj\Debug\net8.0\DataAccessPostgres.csproj.AssemblyReference.cache
+C:\Users\User\RiderProjects\tungtungtung\FirstWebApp\DataAccessPostgres\obj\Debug\net8.0\DataAccessPostgres.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\RiderProjects\tungtungtung\FirstWebApp\DataAccessPostgres\obj\Debug\net8.0\DataAccessPostgres.AssemblyInfoInputs.cache
+C:\Users\User\RiderProjects\tungtungtung\FirstWebApp\DataAccessPostgres\obj\Debug\net8.0\DataAccessPostgres.AssemblyInfo.cs
+C:\Users\User\RiderProjects\tungtungtung\FirstWebApp\DataAccessPostgres\obj\Debug\net8.0\DataAccessPostgres.csproj.CoreCompileInputs.cache
+C:\Users\User\RiderProjects\tungtungtung\FirstWebApp\DataAccessPostgres\obj\Debug\net8.0\DataAccessPostgres.sourcelink.json
+C:\Users\User\RiderProjects\tungtungtung\FirstWebApp\DataAccessPostgres\obj\Debug\net8.0\DataAccessPostgres.dll
+C:\Users\User\RiderProjects\tungtungtung\FirstWebApp\DataAccessPostgres\obj\Debug\net8.0\refint\DataAccessPostgres.dll
+C:\Users\User\RiderProjects\tungtungtung\FirstWebApp\DataAccessPostgres\obj\Debug\net8.0\DataAccessPostgres.pdb
+C:\Users\User\RiderProjects\tungtungtung\FirstWebApp\DataAccessPostgres\obj\Debug\net8.0\ref\DataAccessPostgres.dll
