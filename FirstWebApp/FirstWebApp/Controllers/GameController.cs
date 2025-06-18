@@ -1,7 +1,6 @@
 ﻿using FirstWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using FirstWebApp.Data;
 using System.Diagnostics;
 
 namespace FirstWebApp.Controllers
@@ -9,12 +8,10 @@ namespace FirstWebApp.Controllers
     public class GameController : Controller
     {
         private readonly ILogger<GameController> _logger;
-        private readonly DB _context;
 
-        public GameController(ILogger<GameController> logger, DB context)
+        public GameController(ILogger<GameController> logger)
         {
             _logger = logger;
-            _context = context;
         }
 
         [HttpGet]
@@ -28,8 +25,6 @@ namespace FirstWebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Games.Add(game);
-                _context.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(game);

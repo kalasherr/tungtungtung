@@ -1,15 +1,21 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using FirstWebApp;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.StaticFiles;
-using FirstWebApp.Data;
 
+using DataAccessPostgres;
 internal class Program
 {
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+        var configuration = builder.Configuration;
 
-        builder.Services.AddDbContext<DB>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+        builder.Services.AddDbContext<ProgramDbContext>(options =>
+        {            
+            options.UseNpgsql(configuration.GetConnectionString(nameof(ProgramDbContext)));   
+        });
         
         builder.Services.AddControllersWithViews();
 

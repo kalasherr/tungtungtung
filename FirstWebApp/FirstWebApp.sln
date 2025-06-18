@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstWebApp", "FirstWebApp\FirstWebApp.csproj", "{30841188-B3F7-48B5-B499-4DFFA4C875B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessPostgres", "DataAccessPostgres\DataAccessPostgres.csproj", "{EF6F3F80-9285-4F62-A634-86BED22E297E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{30841188-B3F7-48B5-B499-4DFFA4C875B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30841188-B3F7-48B5-B499-4DFFA4C875B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30841188-B3F7-48B5-B499-4DFFA4C875B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF6F3F80-9285-4F62-A634-86BED22E297E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF6F3F80-9285-4F62-A634-86BED22E297E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF6F3F80-9285-4F62-A634-86BED22E297E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF6F3F80-9285-4F62-A634-86BED22E297E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

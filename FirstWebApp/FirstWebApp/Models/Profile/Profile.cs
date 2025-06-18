@@ -1,4 +1,6 @@
-﻿namespace FirstWebApp.Models;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+
+namespace FirstWebApp.Models;
 using System;
 using System.IO;
 public class Profile
@@ -7,9 +9,9 @@ public class Profile
 
     public void fill_list()
     {
+        int b = 0;
         
-
-        string rootPath = "/Games";
+        string rootPath = "wwwroot/Games";
 
         if (Directory.Exists(rootPath))
         {
