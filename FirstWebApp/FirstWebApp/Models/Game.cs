@@ -1,7 +1,10 @@
-﻿namespace FirstWebApp.Models;
+﻿using DataAccessPostgres.Models;
+
+namespace FirstWebApp.Models;
 
 public class Game
 {
+    public GameEntity game_entity { get; set; }
     public int id { get; set; }
     public string name { get; set; } = "";
     public string description { get; set; } = "blablabla";
@@ -17,10 +20,32 @@ public class Game
     }
     public Game(int game_id)
     {
-        tags_list.Add("1000");
-        tags_list.Add("1000");
-        tags_list.Add("1000");
-        comments.Add(new Comment(0, "tralalelo tralala", "bombordiro crocodilo"));
+        UserEntity user = new UserEntity();
+        CommentEntity comment = new CommentEntity();
+        comment.Text = "penis penis penis penis";
+        comment.User = user;
+        user.User_Name = "Penis Penisovich";
+        game_entity = new GameEntity();
+        TagEntity tag = new TagEntity();
+        TagEntity tag2 = new TagEntity();
+        tag.Name = "tag1";
+        tag2.Name = "tag2";
+        // gameEntity.Id;
+        game_entity.Title  = "penis";
+        game_entity.Description  = "penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis ";
+        game_entity.release_date = DateTime.Now;
+        game_entity.Tags = [tag,tag2];
+        game_entity.Comments = [comment];
+
+        // gameEntity.User_Id;
+        //
+        // gameEntity.User;
+        
+        // tags_list.Add("1000");
+        // tags_list.Add("1000");
+        // tags_list.Add("1000");
+        // comments.Add(new Comment(0, "tralalelo tralala", "bombordiro crocodilo"));
+        
         id = game_id;
         name = "default name";
     }

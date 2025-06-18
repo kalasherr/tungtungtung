@@ -27,7 +27,6 @@ public class GameEntity
     public string Title { get; set; } = String.Empty;
     public string Description { get; set; } = String.Empty;
     public DateTime release_date { get; set; } = DateTime.Now;
-    
     public List<TagEntity> Tags { get; set; } = [];
     public List<CommentEntity> Comments { get; set; } = [];
     

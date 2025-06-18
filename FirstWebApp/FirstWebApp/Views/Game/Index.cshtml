@@ -1,6 +1,5 @@
 ﻿@model Game
 
-
 <style>
     {
         text-align: center;
@@ -42,44 +41,51 @@
 <body>
 <img style = "align-content: center;" src=@Url.Content($"~/games/{Model.id}/Images/logo.png") alt="Game @Model.id" />
 <iframe src="/games/@Model.id/index.html" width="@Model.window_width" height="@Model.window_height"></iframe>
-    @if (Model.description != "")
+<h1>
+    @if (Model.game_entity.Title != "")
     {
-        <div style="text-align: left; color: white;"><h4>@Model.description</h4></div>
+        <div style="text-align: left; color: white;"><h1>@Model.game_entity.Title</h1></div>
     }
-    <div style="height: 50px;"></div>
-    @if (Model.tags_list.Count != 0)
-    {
-        <div style="text-align: left; color: white;">
-            <h4>Tags:</h4>
-            @foreach (var tag in Model.tags_list)
-            {
-                <a class="game-link" asp-controller="Home" asp-action="TopList" asp-route-tag="@tag" style="margin-right: 0px; color: #ffffff; text-decoration: none;">
-                    @tag
-                </a>
-            }
-        </div>
-    }
-    <div style="height: 50px;"></div>
-    <h6>Comments: </h6>
-    <div style="height: 20px;"></div>
-    @if (Model.comments.Count != 0)
-    {
-        @foreach (var comment in Model.comments)
+</h1>
+<div style="height: 50px;"></div>    
+@if (Model.game_entity.Description != "")
+{
+    <div style="text-align: left; color: white;"><h4>@Model.game_entity.Description</h4></div>
+}
+<div style="height: 50px;"></div>
+@if (Model.game_entity.Tags.Count != 0)
+{
+    <div style="text-align: left; color: white;">
+        <h4>Tags:</h4>
+        @foreach (var tag in Model.game_entity.Tags)
         {
-            <a class="game-link" asp-controller="Profile" asp-action="Index" asp-route-id="@comment.author" style="margin-right: 0px; color: #ffffff; text-decoration: none;">
-                <h6>@comment.author : </h6>
+            <a class="game-link" asp-controller="Home" asp-action="TopList" asp-route-tag="@tag.Name" style="margin-right: 0px; color: #ffffff; text-decoration: none;">
+                @tag.Name
             </a>
-            <h6><div style = "margin-left: 20px; margin-top: 10px;">@comment.text</div></h6>
         }
-    }
-    else
+    </div>
+}
+<div style="height: 50px;"></div>
+<h6>Comments: </h6>
+<div style="height: 20px;"></div>
+@if (Model.game_entity.Comments.Count != 0)
+{
+    @foreach (var comment in Model.game_entity.Comments)
     {
-        <h6>There is no comments there :(</h6>
+        <a class="game-link" asp-controller="Profile" asp-action="Index" asp-route-id="@comment.User.Id" style="margin-right: 0px; color: #ffffff; text-decoration: none;">
+            <h6>@comment.User.User_Name : </h6>
+        </a>
+        <h6><div style = "margin-left: 20px; margin-top: 10px;">@comment.Text</div></h6>
     }
-    <div style="height: 100px;"></div>
-    
-    
-    
+}
+else
+{
+    <h6>There is no comments there :(</h6>
+}
+<div style="height: 100px;"></div>
+
+
+
     
     
     </body>
