@@ -2,8 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.StaticFiles;
-
 using DataAccessPostgres;
+using DataAccessPostgres.Repositories;
+
 internal class Program
 {
     public static void Main(string[] args)
@@ -15,7 +16,9 @@ internal class Program
         builder.Services.AddDbContext<ProgramDbContext>(options =>
         {            
             options.UseNpgsql(configuration.GetConnectionString(nameof(ProgramDbContext)));   
+            
         });
+        
         
         builder.Services.AddControllersWithViews();
 

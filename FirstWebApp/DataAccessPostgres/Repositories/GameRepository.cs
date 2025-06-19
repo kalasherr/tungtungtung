@@ -13,14 +13,12 @@ public class GameRepository
     }
 
     
-    public async Task Add(Guid Id, string Title, string description, List<TagEntity> tags, List<CommentEntity> comments)
+    public async Task Add(Guid Id, string Title, string description)
     {
         var entity = new GameEntity();
         entity.Id = Id;
         entity.Title = Title;
         entity.Description = description;
-        entity.Tags = tags;
-        entity.Comments = comments;
         
         await _dbContext.AddAsync(entity);
         await _dbContext.SaveChangesAsync();
@@ -37,5 +35,13 @@ public class GameRepository
             .OrderBy(c => c.Id)
             .ToListAsync();
     }
+
+    public async Task<GameEntity> GetGame(Guid Id)
+    {
+         return await _dbContext.Games.AsNoTracking()
+             .Include(g => g.Comments).
+             FirstOrDefaultAsync(g => g.Id == Id);
+    }
+    
     
 }

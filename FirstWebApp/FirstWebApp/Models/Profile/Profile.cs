@@ -9,6 +9,7 @@ public class Profile
 
     public void fill_list()
     {
+        
         int b = 0;
         
         string rootPath = "wwwroot/Games";
