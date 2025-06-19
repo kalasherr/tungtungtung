@@ -22,19 +22,14 @@ public class Game
     {
         UserEntity user = new UserEntity();
         CommentEntity comment = new CommentEntity();
-        comment.Text = "penis penis penis penis";
+        comment.Text = "Какой-то рандомный коммент, который должен быть каким-то отзывом к игре";
         comment.User = user;
-        user.User_Name = "Penis Penisovich";
+        user.User_Name = "Рандомный комментатор";
         game_entity = new GameEntity();
-        TagEntity tag = new TagEntity();
-        TagEntity tag2 = new TagEntity();
-        tag.Name = "tag1";
-        tag2.Name = "tag2";
         // gameEntity.Id;
-        game_entity.Title  = "penis";
-        game_entity.Description  = "penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis penis ";
+        game_entity.Title  = "Ну да это просто игра";
+        game_entity.Description  = "Здесь должно быть длинное описание игры, но у нас нет подключения к бд";
         game_entity.release_date = DateTime.Now;
-        game_entity.Tags = [tag,tag2];
         game_entity.Comments = [comment];
 
         // gameEntity.User_Id;

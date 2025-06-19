@@ -23,7 +23,7 @@ namespace FirstWebApp.Controllers
         [HttpPost]
         public IActionResult Create(Game game)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid )
             {
                 return RedirectToAction("Index");
             }
