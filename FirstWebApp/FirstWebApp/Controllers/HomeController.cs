@@ -13,11 +13,12 @@ namespace FirstWebApp.Controllers
         {
             _logger = logger;
         }
-
-        public IActionResult Index(string id)
+        
+        public IActionResult Index(string tag)
         {
-            ViewData["id"] = id;            
-            return View();
+            Home home = new Home();
+            home.fill_list();
+            return View(home);
         }
 
         public IActionResult Privacy()
